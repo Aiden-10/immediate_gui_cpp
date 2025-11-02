@@ -3,7 +3,7 @@
 A lightweight **immediate-mode GUI library** built in C++ using Direct3D 11. Designed for interactive applications, demos, or tools, featuring a fully internal input system, dark-themed styling, and modular components.
 
 ---
-![GUI Demo](https://raw.githubusercontent.com/Aiden-10/immediate_gui_cpp/gui_cpp/Images/demo.png)
+![GUI Demo](gui_cpp/Images/demo.png)
 ## Features
 
 - **Windows / Panels**
