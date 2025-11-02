@@ -63,6 +63,26 @@ int main()
         // (Work In Progress) ui.AddTextInput("Name", &userName);
         ui.EndWindow();
 
+        // Menu 2
+        ui.BeginWindow("Shapes Info", 450, 100, 300, 300);
+        ui.AddText("Total Shapes:", Color(1, 1, 1, 1));
+        ui.AddText(std::to_string(shapes.size()), Color(0.8f, 0.8f, 0.8f, 1.0f));
+        static float globalSize = 50.f;
+        ui.AddText("Global Shape Size", Color(1, 1, 1, 1));
+        ui.AddSlider("Size", &globalSize, [&](float v) {
+            for (auto& s : shapes)
+                s.size = v;
+        });
+        static bool randomizeColor = false;
+        ui.AddCheckbox("Random Colors", &randomizeColor);
+        if (randomizeColor) {
+            for (auto& s : shapes) {
+                s.r = static_cast<float>(rand()) / RAND_MAX;
+                s.g = static_cast<float>(rand()) / RAND_MAX;
+                s.b = static_cast<float>(rand()) / RAND_MAX;
+            }
+        }
+        ui.EndWindow();
 
 
         // Render Shapes
